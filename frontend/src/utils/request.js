@@ -1,8 +1,5 @@
 const sendHistoryData = async (duration, percentage) => {
-  const data = {
-    duration: duration,
-    percentage: percentage,
-  };
+  const data = { duration, percentage };
   try {
     const token = localStorage.getItem('token');
     const response = await fetch(
@@ -26,6 +23,7 @@ const sendHistoryData = async (duration, percentage) => {
   } catch (error) {
     console.error('There was a problem with the fetch operation:', error);
   }
+  return undefined;
 };
 
 const getUserInfo = async () => {
